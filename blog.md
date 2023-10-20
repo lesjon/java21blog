@@ -1,6 +1,6 @@
 # Building better Optional in Java 21
 ## What Optional should have been  
-Since “new” java, starting with java 8, the java standard has been expanded to support more modern programming paradigms.
+Since "new" java, starting with java 8, the java standard has been expanded to support more modern programming paradigms.
 Optional was an obvious improvement over the existing null check / NullPointerException state.
 However, after 9 years since Java 8 with the introduction of Optional, it is still not as widely used as in other languages.
 

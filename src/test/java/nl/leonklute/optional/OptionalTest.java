@@ -19,7 +19,7 @@ class OptionalTest {
         assertThrows(NoSuchElementException.class, emptyOptional::get);
         switch (optional) {
             case Present(var some) -> assertEquals("Hello", some);
-            case Empty() -> fail("Should not enter branch");
+            case Empty _ -> fail("Should not enter branch");
         }
     }
 
@@ -51,7 +51,7 @@ class OptionalTest {
         // New style
         switch (Optional.of("Hello")) {
             case Present(var value) -> assertEquals("Hello", value);
-            case Empty() -> fail("Should not enter branch");
+            case Empty _ -> fail("Should not enter branch");
         }
         if (Optional.of("test") instanceof Present(var value)) {
             assertEquals("test", value);
@@ -64,7 +64,7 @@ class OptionalTest {
     void testNullOptional() {
         switch (Optional.ofNullable(null)) {
             case Present(var value) -> fail(format("Should not enter branch; value is '%s'", value));
-            case Empty() -> {
+            case Empty _ -> {
             }
         }
     }

@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>nl.leonklute</groupId>
-  <artifactId>optional</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>Archetype - optional</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <java.version>21</java.version>
-  </properties>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>nl.leonklute</groupId>
+    <artifactId>optional</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Archetype - optional</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <java.version>21</java.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -18,18 +18,34 @@
         </dependency>
     </dependencies>
     <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-            <compilerArgument>
-                --enable-preview
-            </compilerArgument>
-          <source>21</source>
-          <target>21</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArgument>
+                        --enable-preview
+                    </compilerArgument>
+                    <source>21</source>
+                    <target>21</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>nl.leonklute</groupId>
+                <artifactId>gfm2html-maven-plugin</artifactId>
+                <version>0.1.0</version>
+                <configuration>
+                    <file>blog.md</file>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>convert</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
