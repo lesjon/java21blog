@@ -1,4 +1,8 @@
 # Building better Optional in Java 21
+Do you think Java could be better for developers‽  
+In this blog I suggest a possible implementation improvement for a feature that promised a brighter future for Java. The `Optional`.  
+Java has been known since its inception for the ever present `NullPointerException` and the `Optional` should have offered a cleaner way of dealing with missing values.
+
 ## What Optional should have been  
 Since "new" java, starting with java 8, the java standard has been expanded to support more modern programming paradigms.
 Optional was an obvious improvement over the existing null check / NullPointerException state.
